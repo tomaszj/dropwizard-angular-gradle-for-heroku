@@ -1,0 +1,42 @@
+buildscript {
+    repositories { jcenter() }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:1.1.1'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+mainClassName = "test.App"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+version = '1.0'
+
+dependencies {
+  compile 'io.dropwizard:dropwizard-core:0.7.1'
+  compile 'io.dropwizard:dropwizard-assets:0.7.1'
+}
+
+shadowJar {
+    mergeServiceFiles()
+}
+
+run {
+  if ( project.hasProperty("appArgs") ) {
+    args Eval.me(appArgs)
+  }
+}
+
+repositories {
+  mavenCentral()
+}
+
+task stage(dependsOn: ['clean', 'shadowJar'])
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.1'
+}
