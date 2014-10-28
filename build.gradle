@@ -15,6 +15,7 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 version = '1.0'
+jar.baseName = 'dropwizard-angular-gradle-for-heroku'
 
 dependencies {
   compile 'io.dropwizard:dropwizard-core:0.7.1'
