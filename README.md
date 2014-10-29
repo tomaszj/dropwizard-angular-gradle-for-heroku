@@ -1,10 +1,10 @@
-# dropwizard-angular-for-heroku
+# dropwizard-angular-gradle-for-heroku
 
-A sample, fairly bare-bones setup for Dropwizard API which serves necessary files for a frontend application. Built using maven. Heroku-ready.
+A sample, fairly bare-bones setup for Dropwizard API which serves necessary files for a frontend application. Built using gradle. Heroku-ready.
 
 # Building locally
 
-run `mvn package` and then `java -jar target/api-1.0-SNAPSHOT.jar server server.conf` or use `run_api.sh` file, which does exactly the same thing.
+run `./gradlew shadowJar` and then `java -jar build/libs/dropwizard-angular-gradle-for-heroku.jar server server.conf` or use `run_api.sh` file, which does exactly the same thing.
 
 # Deploying to heroku
 
@@ -24,7 +24,7 @@ You can test the `Procfile` installing [foreman](https://rubygems.org/gems/forem
 
 # Deployed example
 
-Visit [http://frozen-sea-5668.herokuapp.com](http://frozen-sea-5668.herokuapp.com) to see a working sample
+Visit [https://rocky-ocean-3911.herokuapp.com/](https://rocky-ocean-3911.herokuapp.com/) to see a working sample
 
 # Interesting bits
 

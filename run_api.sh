@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-mvn package
-java -jar target/api-1.0-SNAPSHOT.jar server server.conf
+./gradlew shadowJar
+java -jar build/libs/dropwizard-angular-gradle-for-heroku.jar server server.conf
 
